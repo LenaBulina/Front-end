@@ -1,0 +1,31 @@
+<div class="col-md-2">
+  <ul class="sidebar-nav">
+    <p>Производитель</p>
+    <li>
+      <label>
+        <input type="checkbox" title="Asus" value="Asus" class="producer" #Asus (change)="OnCheck(Asus.value, Asus.checked)">
+      </label> Asus
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" title="Acer" value="Acer" class="producer" #Acer (change)="OnCheck(Acer.value, Acer.checked)">
+      </label> Acer
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" title="Apple" value="Apple" class="producer" #Apple (change)="OnCheck(Apple.value, Apple.checked)">
+      </label> Apple
+    </li>
+  </ul>
+</div>
+  <div class="col-md-10">
+    <div class="col-xs-6 col-md-3" *ngFor="let notebook of notebooks | notebooksFilter: search">
+      <div class="thumbnail">
+        <a href="#"><img src="../../assets/1.jpg" alt="notebook"></a>
+        <h3>{{notebook.producer}}</h3>
+        {{notebook.processor}}
+        <strong>{{notebook.price}}</strong>
+      </div>
+    </div>
+    </div>
+
