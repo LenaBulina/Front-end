@@ -1,6 +1,6 @@
 <div class="col-md-2">
   <ul class="sidebar-nav">
-    <p>Производитель</p>
+    <p><strong>Производитель</strong></p>
     <li>
       <label>
         <input type="checkbox" title="Asus" value="Asus" class="producer" #Asus (change)="OnCheck(Asus.value, Asus.checked)">
@@ -19,12 +19,12 @@
   </ul>
 </div>
   <div class="col-md-10">
-    <div class="col-xs-6 col-md-3" *ngFor="let notebook of notebooks | notebooksFilter: search">
+    <div class="col-xs-6 col-md-3" *ngFor = "let notebook of notebooks | notebooksFilter: search index as i">
       <div class="thumbnail">
-        <a href="#"><img src="../../assets/1.jpg" alt="notebook"></a>
+        <a href="#"><img src="../../assets/{{i + 1}}.jpg" alt="notebook" sizes=""></a>
         <h3>{{notebook.producer}}</h3>
-        {{notebook.processor}}
-        <strong>{{notebook.price}}</strong>
+        {{notebook.processor}} <br>
+        <strong>{{notebook.price}} грн </strong>
       </div>
     </div>
     </div>
