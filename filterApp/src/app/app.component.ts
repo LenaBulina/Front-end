@@ -20,6 +20,6 @@ export class AppComponent {
     {id: 2, producer: 'Acer', processor: 'AMD', price: 15000 },
     {id: 3, producer: 'Asus', processor: 'Intel', price: 14000 },
     {id: 4, producer: 'Acer', processor: 'Intel', price: 13000 },
-    {id: 6, producer: 'Apple', processor: 'iOS', price: 25000 },
-    {id: 7, producer: 'Apple', processor: 'iOS', price: 35000 }
+    {id: 6, producer: 'Apple', processor: 'Intel', price: 25000 },
+    {id: 7, producer: 'Apple', processor: 'Intel', price: 35000 }
     ]}
