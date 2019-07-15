@@ -9,22 +9,35 @@ import {Notebook} from '../app.component';
 export class NotebooksComponent implements OnInit {
   @Input() notebooks: Notebook[] = [];
 
-  search: string[];
+  producerSearch: string[];
+  processorSearch: string[];
 
   constructor() {
-    this.search = [];
+    this.producerSearch = [];
+    this.processorSearch = [];
   }
 
   ngOnInit() {
   }
 
-  OnCheck(value: string, checked: boolean) {
-  if (checked === true) {
-    this.search.push(value);
-  } else {
-    const index = this.search.indexOf(value);
-    this.search.splice(index, 1);
+  OnCheckProducer(classname: string, value: string, checked: boolean) {
+    if (classname === 'producer') {
+      if (checked === true) {
+        this.producerSearch.push(value);
+      } else {
+        const index = this.producerSearch.indexOf(value);
+        this.producerSearch.splice(index, 1);  }
+    }
   }
 
+  OnCheckProcessor(classname: string, value: string, checked: boolean) {
+    if (classname === 'processor') {
+      if (checked === true) {
+        this.processorSearch.push(value);
+      } else {
+        const index = this.processorSearch.indexOf(value);
+        this.processorSearch.splice(index, 1);
+      }
+    }
   }
 }
